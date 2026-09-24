@@ -3,6 +3,9 @@ import { recordTransaction, addAuditLog } from "../database/index.js";
 import { startSpan } from "../tracing.js";
 import { startTracking } from "../transaction-finality.js";
 import logger from "../logger.js";
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 /**
  * Shared pattern for transaction-building routes:
